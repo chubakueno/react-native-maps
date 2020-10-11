@@ -56,6 +56,11 @@ public class AirMapOverlayManager extends ViewGroupManager<AirMapOverlay> {
     view.setTransparency(1 - opacity);
   }
 
+  @ReactProp(name = "bearing")
+  public void setBearing(AirMapOverlay view, float bearing) {
+    view.setBearing(bearing);
+  }
+
   @ReactProp(name = "image")
   public void setImage(AirMapOverlay view, @Nullable String source) {
     view.setImage(source);

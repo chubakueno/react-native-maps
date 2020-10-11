@@ -24,6 +24,7 @@ public class AirMapOverlay extends AirMapFeature implements ImageReadable {
   private Bitmap iconBitmap;
   private boolean tappable;
   private float zIndex;
+  private float bearing;
   private float transparency;
 
   private final ImageReader mImageReader;
@@ -50,6 +51,13 @@ public class AirMapOverlay extends AirMapFeature implements ImageReadable {
     }
   }
 
+  public void setBearing(float bearing) {
+    this.bearing = bearing;
+    if (this.groundOverlay != null) {
+      this.groundOverlay.setBearing(bearing);
+    }
+  }
+  
   public void setTransparency(float transparency) {
       this.transparency = transparency;
       if (groundOverlay != null) {
